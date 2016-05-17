@@ -1,3 +1,3 @@
 # coursera-fullstack-capstone
-# Server
+# Server. Node, Express, Mongoose, MongoDB
 Full Stack Web Development Specialization Capstone Project (Coursera)
