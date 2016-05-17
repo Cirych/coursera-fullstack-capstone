@@ -1,7 +1,9 @@
 # :interrobang: Guesser (working title)
 Full Stack Web Development Specialization Capstone Project (Coursera)
 
-Code is divided into three parts/branch:
+[![GitHub version](https://badge.fury.io/gh/Cirych%2Fcoursera-fullstack-capstone.svg)](https://badge.fury.io/gh/Cirych%2Fcoursera-fullstack-capstone)
+
+Code is divided into three parts/branches:
 
 [Server](https://github.com/Cirych/coursera-fullstack-capstone/tree/server) - REST server on NodeJS
 
