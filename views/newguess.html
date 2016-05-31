@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12">
+            <h3>New Guess</h3>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <form class="form-horizontal" role="form" name="newGuessForm" ng-submit="newGuess()" novalidate>
+
+                <div class="form-group" ng-class="{ 'has-error' : newGuessForm.guessname.$error.required && !newGuessForm.guessname.$pristine }">
+                    <label for="guessname" class="col-sm-2 control-label">Guess Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="guessname" name="guessname" placeholder="Enter Guess Name" ng-model="newguess.guessName"
+                            required>
+                        <span ng-show="newGuessForm.guessName.$error.required && !newGuessForm.guessName.$pristine" class="help-block">Guess name is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="image" class="col-sm-2 control-label">Images</label>
+                    <div class="col-sm-10">
+                        <div class="col-sm-5">
+                            <div class="media-top" ng-show="newguess.guessImage">
+                                <img class="img-preview media-object img-thumbnail" ng-src={{newguess.guessImage}} ng-model="guessImageSrc" onerror="this.src='';"
+                                    alt="Guess image">
+                            </div>
+                            <div class="media-body">
+                                <input type="text" class="form-control" id="guessimage" name="guessimage" placeholder="Guess image url" ng-model="newguess.guessImage">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="media-top" ng-show="newguess.answerImage">
+                                <img class="img-preview media-object img-thumbnail" ng-src={{newguess.answerImage}} onerror="this.src='';" alt="Answer image">
+                            </div>
+                            <div class="media-body">
+                                <input type="text" class="form-control" id="answerimage" name="answerimage" placeholder="Answer image url" ng-model="newguess.answerImage">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description" class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="description" name="description" rows="12" ng-model="newguess.description"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="newoption" class="col-sm-2 control-label">Answers</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="newoption" name="newoption" placeholder="New Answer" ng-keypress="addNewOptionOnEnter($event)" ng-model="newOption">
+                        <button type="button" class="btn btn-primary" ng-click="addNewOption(newOption)">Add answer</button>
+                    </div>
+                    <div class="col-sm-5">
+                        <ul>
+                            <!--<li ng-repeat="option in options"><label><input type="radio" value={{option}}>{{option}}</label></li>-->
+                            <li ng-repeat="option in newguess.options">
+                                <label>
+                                    <input type="radio" id="answeroptions" name="answeroptions" value={{$index}} required ng-model="newguess.selectedAnswer">{{option}}
+                                    <button type="button" ng-click="deleteOption($index)"><i class="fa fa-close"></i></button>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-disabled="newGuessForm.$invalid || newGuessForm.answeroptions.$invalid">Add Guess</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
