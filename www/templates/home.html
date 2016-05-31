@@ -1,0 +1,16 @@
+<ion-view view-title="Menu">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="guess in guesses" class="item-thumbnail-left">
+        <img ng-src="{{guess.guessImage}}" onerror="this.src='';">
+        <h2>{{guess.guessName}}
+        <span style="font-size:75%">{{dish.price/100 | currency}}</span>
+        <span class="badge badge-assertive">{{dish.label}}</span></h2>
+        <p>{{guess.description}}</p>
+        <ion-option-button class="button-assertive icon ion-plus-circled"
+            ng-click="addFavorite(dish._id)">
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
