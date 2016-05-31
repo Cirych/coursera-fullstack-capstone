@@ -27,6 +27,9 @@
         <ion-item menu-close href="#/app/aboutus">
           About Us
         </ion-item>
+        <ion-item ng-if="loggedIn" menu-close href="#/app/newguess">
+          New Guess
+        </ion-item>
         <ion-item menu-close ng-click="login()" ng-if="!loggedIn">
           Login
         </ion-item>

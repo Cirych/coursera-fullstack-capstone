@@ -11,6 +11,7 @@ angular.module('guesser.controllers', [])
 
     // Form data for the login modal
     $scope.loginData = $localStorage.getObject('userinfo', '{}');
+    $scope.registration = {};
     $rootScope.loggedIn = false;
 
     if (AuthFactory.isAuthenticated()) {
