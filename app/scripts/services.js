@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('guesser')
-    .constant("baseURL", "http://localhost:3000/")
+    //.constant("baseURL", "http://localhost:3000/")
+	.constant("baseURL", "https://guesser-cirych.c9users.io/")
 
     .factory('guessFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 

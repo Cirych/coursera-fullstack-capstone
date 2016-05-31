@@ -174,10 +174,7 @@ angular.module('guesser')
         $scope.loginData = {};
 
         $scope.doRegister = function () {
-            console.log('Doing registration', $scope.registration);
-
             AuthFactory.register($scope.registration);
-
             ngDialog.close();
 
         };
