@@ -11,7 +11,7 @@ var config = require('./config');
 
 // DB connection
 
-mongoose.connect(config.mongoUrl);
+mongoose.connect(process.env.MONGODB_URL + 'guesser');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
