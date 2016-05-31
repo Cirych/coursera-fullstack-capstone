@@ -17,3 +17,6 @@ Code is divided into three parts/branches:
 
 
 Web Client hosted on GitHub - [http://cirych.github.io/coursera-fullstack-capstone](http://cirych.github.io/coursera-fullstack-capstone)
+
+
+Mobile client for Android - [APK](https://github.com/Cirych/coursera-fullstack-capstone/blob/ionic/android-debug.apk?raw=true)
