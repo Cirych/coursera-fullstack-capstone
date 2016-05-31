@@ -2,7 +2,7 @@
 
 angular.module('guesser')
     //.constant("baseURL", "http://localhost:3000/")
-	.constant("baseURL", "https://guesser-cirych.c9users.io/")
+	.constant("baseURL", "https://guesser-cirych.rhcloud.com/")
 
     .factory('guessFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
