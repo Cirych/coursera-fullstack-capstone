@@ -89,7 +89,7 @@ angular.module('guesser.services', ['ngResource'])
         $resource(baseURL + "users/login")
         .save(loginData,
            function(response) {
-              storeUserCredentials({username:loginData.username, token: response.token});
+              storeUserCredentials({username:loginData.username, token: response.token, userId: response.userId});
               $rootScope.$broadcast('login:Successful');
            },
            function(response){

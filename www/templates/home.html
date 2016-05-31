@@ -7,9 +7,7 @@
         <span style="font-size:75%">{{dish.price/100 | currency}}</span>
         <span class="badge badge-assertive">{{dish.label}}</span></h2>
         <p>{{guess.description}}</p>
-        <ion-option-button class="button-assertive icon ion-plus-circled"
-            ng-click="addFavorite(dish._id)">
-        </ion-option-button>
+        <a class="button icon-right ion-chevron-right button-calm" ui-sref="app.guessdetails({id: guess._id})">Details</a>
       </ion-item>
     </ion-list>
   </ion-content>

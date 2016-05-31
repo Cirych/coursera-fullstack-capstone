@@ -11,10 +11,10 @@ angular.module('guesser.controllers', [])
 
     // Form data for the login modal
     $scope.loginData = $localStorage.getObject('userinfo', '{}');
-    $scope.loggedIn = false;
+    $rootScope.loggedIn = false;
 
     if (AuthFactory.isAuthenticated()) {
-      $scope.loggedIn = true;
+      $rootScope.loggedIn = true;
       $scope.username = AuthFactory.getUsername();
     }
 
@@ -47,12 +47,12 @@ angular.module('guesser.controllers', [])
 
     $scope.logOut = function () {
       AuthFactory.logout();
-      $scope.loggedIn = false;
+      $rootScope.loggedIn = false;
       $scope.username = '';
     };
 
     $rootScope.$on('login:Successful', function () {
-      $scope.loggedIn = AuthFactory.isAuthenticated();
+      $rootScope.loggedIn = AuthFactory.isAuthenticated();
       $scope.username = AuthFactory.getUsername();
     });
 
@@ -88,7 +88,7 @@ angular.module('guesser.controllers', [])
     };
 
     $rootScope.$on('registration:Successful', function () {
-      $scope.loggedIn = AuthFactory.isAuthenticated();
+      $rootScope.loggedIn = AuthFactory.isAuthenticated();
       $scope.username = AuthFactory.getUsername();
       $localStorage.storeObject('userinfo', $scope.loginData);
     });
@@ -145,7 +145,6 @@ angular.module('guesser.controllers', [])
         $scope.voted = false;
         $scope.win = false;
         var userId = $localStorage.getObject('Token', '{}').userId;
-
         $scope.guess = guessFactory.get({
             id: $stateParams.id
         })
